@@ -23,7 +23,7 @@ for card in eng["white"]:
     else:
         kartya = {"hun" : translation,"eng" : card["text"]}
         hun["white"].append(kartya)
-        print(str(i)+". : "+kartya)
+        print(str(i)+". : "+kartya["hun"]+" / "+kartya["eng"])
         i+=1
         with open("translations/hu/EEK Alapszett részleges.json","w") as f:
             f.write(json.dumps(hun))
