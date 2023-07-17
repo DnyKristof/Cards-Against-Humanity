@@ -16,7 +16,6 @@ i = 1
 
 for card in eng["white"]:
     translation = translator.translate(card)
-    print(card)
     if re.search(regex,translation):
         restofeng["white"].append(card)
         print(str(i)+". : "+card)
@@ -26,8 +25,9 @@ for card in eng["white"]:
     else:
         kartya = {"hun" : translation,"eng" : card}
         hun["white"].append(kartya)
-        print(str(i)+". : "+kartya)
+        print(str(i)+". : "+kartya["hun"] +" / "+kartya["eng"])
         i+=1
         with open("translations/hu/EEK Alapszett részleges.json","w") as f:
             f.write(json.dumps(hun))
+    
     
